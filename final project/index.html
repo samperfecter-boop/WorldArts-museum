@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldArts | Advanced Virtual Museum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 1. Multi-Level Navigation & Mega Menu -->
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <a href="#" class="logo">World<span>Arts</span></a>
+            <img src="./WhatsApp_Image_2025-12-17_at_13.47.06_977e3f07-removebg-preview.png" alt="" width="100px">
+            
+            <div class="nav-utilities">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="font-controls" id="fontControls" title="Font Size Controls">
+                    <i class="fas fa-text-height"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li class="mega">
+                    <a href="#exhibits">Exhibits <i class="fas fa-chevron-down"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-column">
+                            <h4>By Category</h4>
+                            <ul>
+                                <li><a href="#exhibits" data-filter="modern">Modern</a></li>
+                                <li><a href="#exhibits" data-filter="classical">Classical</a></li>
+                                <li><a href="#exhibits" data-filter="historical">Historical</a></li>
+                                <li><a href="#exhibits" data-filter="special">Special Collections</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-column">
+                            <!-- <h4>By Era</h4>
+                            <ul>
+                                <li><a href="#exhibits" data-filter="renaissance">Renaissance</a></li>
+                                <li><a href="#exhibits" data-filter="baroque">Baroque</a></li>
+                                <li><a href="#exhibits" data-filter="impressionism">Impressionism</a></li>
+                                <li><a href="#exhibits" data-filter="contemporary">Contemporary</a></li>
+                            </ul> -->
+                        </div>
+                        <div class="mega-menu-column">
+                            <!-- <h4>Featured</h4> -->
+                            <!-- <ul>
+                                <li><a href="#exhibits" data-filter="featured">Curator's Picks</a></li>
+                                <li><a href="#exhibits" data-filter="popular">Most Popular</a></li>
+                                <li><a href="#exhibits" data-filter="new">New Arrivals</a></li>
+                                <li><a href="#exhibits" data-filter="virtual">Virtual Tours</a></li>
+                            </ul>
+                        </div> -->
+                        <!-- <div class="mega-menu-column">
+                            <h4>Interactive</h4>
+                            <ul>
+                                <li><a href="#comparison">Compare Exhibits</a></li>
+                                <li><a href="#favorites">My Favorites</a></li>
+                                <li><a href="#timeline">Timeline Explorer</a></li>
+                                <li><a href="#dashboard">Analytics</a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#artists">Artists <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="#artists" data-filter="all">All Artists</a></li>
+                        <li><a href="#artists" data-filter="renaissance">Renaissance</a></li>
+                        <li><a href="#artists" data-filter="baroque">Baroque</a></li>
+                        <li><a href="#artists" data-filter="impressionism">Impressionism</a></li>
+                        <li><a href="#artists" data-filter="modern">Modern</a></li>
+                        <li><a href="#artists" data-filter="contemporary">Contemporary</a></li>
+                    </ul>
+                </li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#shop">Shop</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 2. Dynamic Home / Dashboard -->
+    <section id="home" class="hero">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                    <div class="carousel-content">
+                        <h2>Discover Masterpieces Through Time</h2>
+                        <p>Explore our virtual collection of over 5,000 artworks from classical to contemporary eras.</p>
+                        <a href="#exhibits" class="btn">Start Exploring</a>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                    <div class="carousel-content">
+                        <h2>Virtual Exhibition: Renaissance Reimagined</h2>
+                        <p>Experience the rebirth of classical art through our immersive virtual tour.</p>
+                        <a href="#exhibits" class="btn">View Exhibition</a>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1547891654-e66ed7ebb968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                    <div class="carousel-content">
+                        <h2>Upcoming Event: Modern Art Workshop</h2>
+                        <p>Join our live virtual workshop on contemporary art techniques and theory.</p>
+                        <a href="#events" class="btn">Register Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <div class="carousel-dot active" data-index="0"></div>
+                <div class="carousel-dot" data-index="1"></div>
+                <div class="carousel-dot" data-index="2"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number" id="totalExhibits">0</div>
+                    <div class="stat-label">Total Exhibits</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="totalArtists">0</div>
+                    <div class="stat-label">Featured Artists</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="totalVisitors">0</div>
+                    <div class="stat-label">Monthly Visitors</div>
+                </div>
+            </div>
+            
+            <div class="featured-artwork">
+                <h2 class="section-title">Today's Featured Artwork</h2>
+                <div class="artwork-card">
+                    <img src="./Van Gogh Starry Night.jpg" alt="Featured Artwork" class="artwork-image">
+                    <div class="artwork-info">
+                        <h3>Starry Night Over the Rhône</h3>
+                        <p><strong>Artist:</strong> Vincent van Gogh</p>
+                        <p><strong>Year:</strong> 1888</p>
+                        <p>A mesmerizing depiction of the Rhône River at night, showcasing van Gogh's distinctive brushwork and color palette.</p>
+                        <button class="btn view-details-btn" data-id="1">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Exhibits / Galleries Section -->
+    <section id="exhibits" class="exhibits">
+        <div class="container">
+            <h2 class="section-title">Exhibits & Galleries</h2>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Exhibits</button>
+                <button class="filter-btn" data-filter="modern">Modern</button>
+                <button class="filter-btn" data-filter="classical">Classical</button>
+                <button class="filter-btn" data-filter="historical">Historical</button>
+                <button class="filter-btn" data-filter="virtual">Virtual Tours</button>
+                <button class="filter-btn" data-filter="popular">Most Popular</button>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" class="search-box" id="searchBox" placeholder="Search exhibits by name, artist, or era...">
+                <div class="search-results" id="searchResults"></div>
+            </div>
+            
+            <div class="filter-section">
+                <div class="filter-group">
+                    <h4>Filter by Era</h4>
+                    <div class="filter-options">
+                        <div class="filter-option" data-filter="renaissance">Renaissance</div>
+                        <div class="filter-option" data-filter="baroque">Baroque</div>
+                        <div class="filter-option" data-filter="impressionism">Impressionism</div>
+                        <div class="filter-option" data-filter="modern">Modern</div>
+                        <div class="filter-option" data-filter="contemporary">Contemporary</div>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Sort By</h4>
+                    <div class="filter-options">
+                        <div class="filter-option active" data-sort="popularity">Popularity</div>
+                        <div class="filter-option" data-sort="date-new">Date (Newest)</div>
+                        <div class="filter-option" data-sort="date-old">Date (Oldest)</div>
+                        <div class="filter-option" data-sort="alphabetical">Alphabetical</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exhibits-grid" id="exhibitsGrid">
+                <!-- Exhibit cards will be generated by JavaScript -->
+            </div>
+            
+            <div class="compare-section" id="comparison" style="margin-top: 50px;">
+                <h3 style="text-align: center; margin-bottom: 30px;">Compare Exhibits</h3>
+                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <select id="compareSelect1" class="form-control" style="margin-bottom: 15px;">
+                            <option value="">Select first exhibit to compare</option>
+                        </select>
+                        <div id="compareDisplay1" style="background-color: #f8f9fa; padding: 20px; border-radius: var(--border-radius); min-height: 200px;"></div>
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <select id="compareSelect2" class="form-control" style="margin-bottom: 15px;">
+                            <option value="">Select second exhibit to compare</option>
+                        </select>
+                        <div id="compareDisplay2" style="background-color: #f8f9fa; padding: 20px; border-radius: var(--border-radius); min-height: 200px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Artists / Contributors Section -->
+    <section id="artists" class="artists">
+        <div class="container">
+            <h2 class="section-title">Featured Artists</h2>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Artists</button>
+                <button class="filter-btn" data-filter="renaissance">Renaissance</button>
+                <button class="filter-btn" data-filter="baroque">Baroque</button>
+                <button class="filter-btn" data-filter="impressionism">Impressionism</button>
+                <button class="filter-btn" data-filter="modern">Modern</button>
+                <button class="filter-btn" data-filter="contemporary">Contemporary</div>
+            
+            <div class="artists-grid" id="artistsGrid">
+                <!-- Artist cards will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Events & Workshops -->
+    <section id="events" class="events">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events & Workshops</h2>
+            
+            <div class="events-container">
+                <div class="events-list">
+                    <h3 style="margin-bottom: 20px;">Upcoming Events</h3>
+                    <div class="event-card">
+                        <div class="event-date">June 15, 2026 | 2:00 PM EST</div>
+                        <h3>Virtual Tour: Impressionist Masters</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Online Event</span>
+                            <span><i class="fas fa-clock"></i> 90 minutes</span>
+                        </div>
+                        <p>Join our curator for a guided virtual tour of our Impressionist collection, featuring works by Monet, Renoir, and Degas.</p>
+                        <div class="countdown" id="countdown1">
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="days1">00</div>
+                                <div class="countdown-label">Days</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="hours1">00</div>
+                                <div class="countdown-label">Hours</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="minutes1">00</div>
+                                <div class="countdown-label">Minutes</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="seconds1">00</div>
+                                <div class="countdown-label">Seconds</div>
+                            </div>
+                        </div>
+                        <button class="btn" style="margin-top: 15px;">Register Now</button>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">June 22, 2026 | 6:00 PM EST</div>
+                        <h3>Modern Art Techniques Workshop</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Online Workshop</span>
+                            <span><i class="fas fa-clock"></i> 2 hours</span>
+                        </div>
+                        <p>Learn contemporary painting techniques from award-winning artist Maria Rodriguez in this interactive virtual workshop.</p>
+                        <div class="countdown" id="countdown2">
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="days2">00</div>
+                                <div class="countdown-label">Days</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="hours2">00</div>
+                                <div class="countdown-label">Hours</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="minutes2">00</div>
+                                <div class="countdown-label">Minutes</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number" id="seconds2">00</div>
+                                <div class="countdown-label">Seconds</div>
+                            </div>
+                        </div>
+                        <button class="btn" style="margin-top: 15px;">Register Now</button>
+                    </div>
+                </div>
+                
+                <div class="calendar-view">
+                    <div class="calendar-header">
+                        <h3>June 2026</h3>
+                        <div>
+                            <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                            <button id="nextMonth" style="margin-left: 10px;"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar days will be generated by JavaScript -->
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <h4>Event Types</h4>
+                        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 15px; height: 15px; background-color: var(--secondary-color); margin-right: 10px;"></div>
+                                <span>Workshop</span>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 15px; height: 15px; background-color: var(--accent-color); margin-right: 10px;"></div>
+                                <span>Exhibition</span>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 15px; height: 15px; background-color: var(--success-color); margin-right: 10px;"></div>
+                                <span>Virtual Tour</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Interactive Features - Favorites Section -->
+    <section id="favorites" class="favorites">
+        <div class="container">
+            <h2 class="section-title">My Favorite Exhibits</h2>
+            <p style="text-align: center; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Drag and drop to reorder your favorite exhibits. Your favorites are saved in your browser.
+            </p>
+            
+            <div class="favorites-section">
+                <div class="favorites-grid" id="favoritesGrid">
+                    <!-- Favorites will be added by JavaScript -->
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn" id="clearFavorites">Clear All Favorites</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Dashboard & Analytics -->
+    <section id="dashboard" class="dashboard-section">
+        <div class="container">
+            <h2 class="section-title">Museum Analytics Dashboard</h2>
+            
+            <div class="dashboard">
+                <div class="dashboard-card">
+                    <h3>Most Viewed Exhibits</h3>
+                    <div class="chart-container">
+                        <div class="chart-bar">
+                            <div class="bar" style="height: 90%;">
+                                <div class="bar-label">Starry Night</div>
+                            </div>
+                            <div class="bar" style="height: 75%;">
+                                <div class="bar-label">Mona Lisa</div>
+                            </div>
+                            <div class="bar" style="height: 60%;">
+                                <div class="bar-label">The Scream</div>
+                            </div>
+                            <div class="bar" style="height: 50%;">
+                                <div class="bar-label">Girl with Pearl</div>
+                            </div>
+                            <div class="bar" style="height: 40%;">
+                                <div class="bar-label">The Kiss</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3>Visitor Statistics</h3>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Exhibits Viewed Today</span>
+                            <span id="todayViews">0</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="todayViewsProgress"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container" style="margin-top: 20px;">
+                        <div class="progress-label">
+                            <span>Favorites Added</span>
+                            <span id="favoritesCount">0</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="favoritesProgress"></div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <h4>Weekly Visitors</h4>
+                        <div id="weeklyVisitors" style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); text-align: center; margin-top: 10px;">1,247</div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3>Popular Artists</h3>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Vincent van Gogh</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container" style="margin-top: 15px;">
+                        <div class="progress-label">
+                            <span>Leonardo da Vinci</span>
+                            <span>78%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 78%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container" style="margin-top: 15px;">
+                        <div class="progress-label">
+                            <span>Pablo Picasso</span>
+                            <span>72%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 72%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container" style="margin-top: 15px;">
+                        <div class="progress-label">
+                            <span>Claude Monet</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Shop / Merchandise Section -->
+    <section id="shop" class="shop">
+        <div class="container">
+            <h2 class="section-title">Museum Shop</h2>
+            
+            <div class="shop-grid" id="shopGrid">
+                <!-- Product cards will be generated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="cart-summary" id="cartSummary">
+            <h3 style="margin-bottom: 15px;">Cart Summary</h3>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be added by JavaScript -->
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-accent" style="width: 100%; margin-top: 15px;">Checkout (Mock)</button>
+        </div>
+    </section>
+
+    <!-- 10. About / Museum Info -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About WorldArts Museum</h2>
+            
+            <div class="about-content">
+                <div>
+                    <h3 style="margin-bottom: 20px;">Our Vision</h3>
+                    <p style="margin-bottom: 20px;">WorldArts Museum is dedicated to making art accessible to everyone, everywhere. We believe that art appreciation should not be limited.</p>
+                    <p style="margin-bottom: 20px;">Our virtual museum brings together masterpieces from collections around the world, creating a unified digital experience that transcends traditional museum boundaries.</p>
+                    <p>Through innovative technology and thoughtful curation, we provide exclusive art experiences that educate, inspire, and connect people across cultures.</p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 20px;">Core Values</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                            <i class="fas fa-check" style="position: absolute; left: 0; color: var(--secondary-color);"></i>
+                            <strong>Accessibility:</strong> Making art available to all, regardless of physical or financial constraints.
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                            <i class="fas fa-check" style="position: absolute; left: 0; color: var(--secondary-color);"></i>
+                            <strong>Education:</strong> Providing context and insights to deepen understanding of art history and techniques.
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                            <i class="fas fa-check" style="position: absolute; left: 0; color: var(--secondary-color);"></i>
+                            <strong>Innovation:</strong> Leveraging technology to create engaging and interactive art experiences.
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                            <i class="fas fa-check" style="position: absolute; left: 0; color: var(--secondary-color);"></i>
+                            <strong>Preservation:</strong> Digitally preserving artworks for future generations.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline" id="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2023</h4>
+                        <p>WorldArts Museum idea was born.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2024</h4>
+                        <p>Increased global accessibility,allowing 24/7 access for global audience.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2025</h4>
+                        <p>creating a digitalized long term archive to safeguard and showcase valuable artifacts,heritage and knowledge.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2026<h4>
+                        <p>Achieving measurable engagment through web traffic and positive user testimonials.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <!-- <h4>2023</h4>
+                        <p>Introduced AI-powered personalized tours and expanded to mobile platforms.</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Contact & Support -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                            <div class="error" id="nameError">Please enter your name</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                            <div class="error" id="emailError">Please enter a valid email address</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                            <div class="error" id="subjectError">Please enter a subject</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                            <div class="error" id="messageError">Please enter your message</div>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 20px;">Visit Our Virtual Museum</h3>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <div style="text-align: center;">
+                                <i class="fas fa-map-marker-alt" style="font-size: 3rem; margin-bottom: 15px; color: var(--secondary-color);"></i>
+                                <p>Virtual Museum Location</p>
+                                <p>Accessible worldwide 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <h4>Contact Information</h4>
+                        <div style="margin-top: 15px;">
+                            <p><i class="fas fa-envelope" style="margin-right: 10px;"></i>samperfecter@gmail.com</p>
+                            <p><i class="fas fa-phone" style="margin-right: 10px;"></i> +234 8107490801</p>
+                            <p><i class="fas fa-clock" style="margin-right: 10px;"></i> Support available 9AM-6PM , Monday-Friday</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div class="modal" id="exhibitModal">
+        <div class="modal-content">
+            <button class="modal-close" id="exhibitModalClose">&times;</button>
+            <div class="modal-header">
+                <h2 id="modalExhibitTitle">Exhibit Title</h2>
+                <p id="modalExhibitArtist">Artist Name</p>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <img id="modalExhibitImage" src="" alt="Exhibit Image" class="modal-image">
+                    <div style="margin-top: 20px;">
+                        <button class="btn" id="addToFavorites"><i class="far fa-heart"></i> Add to Favorites</button>
+                        <button class="btn btn-accent" style="margin-left: 10px;"><i class="fas fa-share-alt"></i> Share</button>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 15px;">Details</h3>
+                    <p id="modalExhibitDescription">Description will appear here.</p>
+                    <div style="margin-top: 20px;">
+                        <h4>Artwork Information</h4>
+                        <table style="width: 100%; margin-top: 10px;">
+                            <tr>
+                                <td style="padding: 8px 0;"><strong>Year:</strong></td>
+                                <td id="modalExhibitYear">Unknown</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px 0;"><strong>Medium:</strong></td>
+                                <td id="modalExhibitMedium">Oil on canvas</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px 0;"><strong>Dimensions:</strong></td>
+                                <td id="modalExhibitDimensions">73.7 cm × 92.1 cm</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px 0;"><strong>Location:</strong></td>
+                                <td id="modalExhibitLocation">Museum of Modern Art, New York</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <h4>Timeline</h4>
+                        <div style="background-color: #f8f9fa; padding: 15px; border-radius: var(--border-radius); margin-top: 10px;">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="width: 15px; height: 15px; background-color: var(--secondary-color); border-radius: 50%; margin-right: 10px;"></div>
+                                <span>Created: <span id="timelineCreated">1889</span></span>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <div style="width: 15px; height: 15px; background-color: var(--accent-color); border-radius: 50%; margin-right: 10px;"></div>
+                                <span>First Exhibition: <span id="timelineFirstExhibition">1901</span></span>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 15px; height: 15px; background-color: var(--success-color); border-radius: 50%; margin-right: 10px;"></div>
+                                <span>Acquired by Museum: <span id="timelineAcquired">1941</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="artistModal">
+        <div class="modal-content">
+            <button class="modal-close" id="artistModalClose">&times;</button>
+            <div class="modal-header">
+                <h2 id="modalArtistName">Artist Name</h2>
+                <p id="modalArtistEra">Era • Style</p>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <img id="modalArtistImage" src="" alt="Artist Portrait" class="modal-image">
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 15px;">Biography</h3>
+                    <p id="modalArtistBio">Artist biography will appear here.</p>
+                    <div style="margin-top: 20px;">
+                        <h4>Achievements & Awards</h4>
+                        <ul id="modalArtistAchievements" style="margin-top: 10px; padding-left: 20px;">
+                            <li>Award 1</li>
+                            <li>Award 2</li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <h4>Notable Works</h4>
+                        <div id="modalArtistWorks" style="margin-top: 10px;">
+                            <!-- Works will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 12. UX & Accessibility Enhancements -->
+    <div class="accessibility-controls" id="accessibilityControls">
+        <div class="font-size-controls">
+            <button class="font-size-btn" id="fontDecrease">A-</button>
+            <span>Font Size</span>
+            <button class="font-size-btn" id="fontIncrease">A+</button>
+        </div>
+        <button class="btn" id="resetAccessibility">Reset</button>
+    </div>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>WorldArts Museum</h3>
+                    <p>Bringing art to your screen. Explore thousands of artworks from the comfort of your home.</p>
+                    <div style="margin-top: 15px;">
+                        <button class="theme-toggle" id="footerThemeToggle" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
+                            <i class="fas fa-moon"></i> Toggle Dark Mode
+                        </button>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#exhibits">Exhibits</a></li>
+                        <li><a href="#artists">Artists</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#shop">Shop</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Stay Connected</h3>
+                    <p>Subscribe to our newsletter for updates on new exhibits and events.</p>
+                    <div style="margin-top: 15px;">
+                        <input type="email" placeholder="Your email" style="padding: 10px; border-radius: 5px; border: none; width: 70%;">
+                        <button class="btn" style="padding: 10px 15px; margin-left: 5px;">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 WorldArts Virtual Museum. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
